@@ -27,6 +27,9 @@ void game::run(){
      while(is_running){
           while(SDL_PollEvent(&event)){
                handle_input(event);
+               if(event.type == SDL_EVENT_QUIT){
+                    is_running = false;
+               }
           }
           
           update();
