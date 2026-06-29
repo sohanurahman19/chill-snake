@@ -10,6 +10,7 @@ private:
      SDL_Renderer* painter;
      snake python;
      food fish;
+     bool is_running = false;
      int delay = 100; 
      void handle_input(SDL_Event &event);
      void update();

@@ -17,11 +17,11 @@ bool game::init(){
      if(window == nullptr) return false;
      painter = SDL_CreateRenderer(window, nullptr);
      if(painter == nullptr) return false;
+     is_running = true;
      return true;
 }
 
 void game::run(){
-     bool is_running = true;
      SDL_Event event;
      while(is_running){
           while(SDL_PollEvent(&event)){
@@ -50,6 +50,17 @@ void game::handle_input(SDL_Event &event){
 
 void game::update(){
      python.move();
+
+     pos head = python.get_head();
+     auto body = python.get_body();
+     for(int i = 1; i < body.size(); i++){
+          if(head == body[i]){
+               SDL_Log("Game Over!");
+               is_running = false;
+               break;
+          }
+     }
+
      if(fish.get_current_pos() == python.get_head()){
           python.grow();
           fish.re_spawn();
