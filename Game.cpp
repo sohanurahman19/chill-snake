@@ -28,6 +28,7 @@ void game::run(){
           while(SDL_PollEvent(&event)){
                handle_input(event);
           }
+          
           update();
           paint();
           SDL_Delay(delay);
@@ -43,4 +44,35 @@ void game::handle_input(SDL_Event &event){
                case SDLK_LEFT : python.set_direction({-config::grid_size, 0}); break;
           }
      }
+}
+
+void game::update(){
+     python.move();
+     if(fish.get_current_pos() == python.get_head()){
+          python.grow();
+          fish.re_spawn();
+     }
+}
+
+void game::paint(){
+     float grid_si = (float)config::grid_size;
+     SDL_SetRenderDrawColor(painter, 0, 0, 0, 255);
+     SDL_RenderClear(painter);
+
+     // drawing the fish (food)
+     SDL_SetRenderDrawColor(painter, 255, 0, 0, 255);
+     pos fish_pos = fish.get_current_pos();
+     SDL_FRect fish_rect = {(float)fish_pos.x, (float)fish_pos.y, grid_si, grid_si};
+     SDL_RenderFillRect(painter, &fish_rect);
+
+     // drawing python (the snake)
+     SDL_SetRenderDrawColor(painter, 0, 255, 0, 255);
+     auto body = python.get_body();
+     for(const auto &part : body){
+          SDL_FRect part_rect = {(float)part.x, (float)part.y, grid_si, grid_si};
+          SDL_RenderFillRect(painter, &part_rect);
+     }
+
+     // swapping the front and the back buffer
+     SDL_RenderPresent(painter);
 }

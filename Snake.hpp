@@ -18,4 +18,4 @@ public:
      const pos get_head() const {
           return body.front();
      }
-}
+};
