@@ -1,11 +1,11 @@
 #pragma once
 #include "Location.hpp"
 
-class Food{
+class food{
 private:
      pos current_pos;
 public:
-     Food();
+     food();
      void re_spawn();
      pos get_current_pos(){
           return current_pos;
