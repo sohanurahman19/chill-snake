@@ -1,5 +1,5 @@
 #include <SDL3/SDL.h>
 
-signed main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
      
 }
