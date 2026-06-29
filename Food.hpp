@@ -5,10 +5,10 @@ class food{
 private:
      pos current_pos;
      int randomIntegerRange = 10000000;
-     int get_random();
+     pos get_random_pos();
 public:
-     food();
-     void re_spawn();
+     food(snake &python);
+     void re_spawn(const snake &current_snake);
      pos get_current_pos(){
           return current_pos;
      }
