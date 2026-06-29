@@ -6,6 +6,7 @@ class snake{
 private:
      std::deque<pos> body;
      pos direction_vector;
+     int grow_pending = 0;
 public:
      snake();
      void move();
