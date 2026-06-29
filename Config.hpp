@@ -1,8 +1,8 @@
 #pragma once
 
-class Config{
+class config{
 public:
-     static const int SCREEN_WIDTH = 800;
-     static const int SCREEN_HEIGHT = 600;
-     static const int GRID_SIZE = 20;
+     static const int screen_width = 800;
+     static const int screen_height = 600;
+     static const int grid_size = 20;
 };
