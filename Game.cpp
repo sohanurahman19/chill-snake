@@ -1,4 +1,4 @@
-#include "game.hpp"
+#include "Game.hpp"
 
 game::game() : painter(nullptr), window(nullptr) { };
 game::~game(){
