@@ -6,6 +6,11 @@ snake::snake(){
      body.push_back({7 * config::grid_size, middle_row_pixel});
      body.push_back({6 * config::grid_size, middle_row_pixel});
      body.push_back({5 * config::grid_size, middle_row_pixel});
+     body.push_back({4 * config::grid_size, middle_row_pixel});
+     body.push_back({3 * config::grid_size, middle_row_pixel});
+     body.push_back({2 * config::grid_size, middle_row_pixel});
+     body.push_back({1 * config::grid_size, middle_row_pixel});
+     body.push_back({0 * config::grid_size, middle_row_pixel});
 }
 
 void snake::move(){
