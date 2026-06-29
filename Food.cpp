@@ -13,15 +13,16 @@ void food::re_spawn(const snake &current_snake){
      bool invalid = true;
      while(invalid){
           pos new_pos = get_random_pos();
-          bool valid_pos = true;
+          bool collision = false;
           for(const auto &part : body){
                if(part == new_pos){
-                    valid_pos &= false;
+                    collision = true;
+                    break;
                }
           }
-          invalid &= valid_pos;
-          if(!invalid){
+          if(!collision){
                current_pos = new_pos;
+               invalid = false;
           }
      }
 }

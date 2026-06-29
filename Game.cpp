@@ -61,7 +61,7 @@ void game::update(){
           }
      }
 
-     if( == python.get_head()){
+     if(fish.get_current_pos() == python.get_head()){
           python.grow();
           fish.re_spawn(python);
      }
