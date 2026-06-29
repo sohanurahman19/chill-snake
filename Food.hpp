@@ -1,5 +1,6 @@
 #pragma once
 #include "Location.hpp"
+#include "Snake.hpp"
 
 class food{
 private:
