@@ -3,9 +3,9 @@
 snake::snake(){
      direction_vector = {config::grid_size, 0};
      int middle_row_pixel = (config::total_row / 2) * config::grid_size;
-     body.push_back({5 * config::grid_size, middle_row_pixel});
-     body.push_back({6 * config::grid_size, middle_row_pixel});
      body.push_back({7 * config::grid_size, middle_row_pixel});
+     body.push_back({6 * config::grid_size, middle_row_pixel});
+     body.push_back({5 * config::grid_size, middle_row_pixel});
 }
 
 void snake::move(){
