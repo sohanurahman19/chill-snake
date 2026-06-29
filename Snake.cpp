@@ -9,7 +9,11 @@ snake::snake(){
 }
 
 void snake::move(){
-     pos new_head = {(body.front().x + direction_vector.x) % config::total_column, (body.front().y + direction_vector.y) % config::total_row};
+     pos new_head = {
+                    (body.front().x + direction_vector.x + config::screen_width) % config::screen_width,
+                    (body.front().y + direction_vector.y + config::screen_height) % config::screen_height,
+
+     };
      body.push_front(new_head);
      if(grow_pending > 0){
           grow_pending--;

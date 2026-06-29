@@ -1,8 +1,8 @@
 #pragma once
 #include <SDL3/SDL.h>
-#include <Config.hpp>
-#include <Snake.hpp>
-#include <Food.hpp>
+#include "Config.hpp"
+#include "Snake.hpp"
+#include "Food.hpp"
 
 class game{
 private:

@@ -1,3 +1,4 @@
+#pragma once
 #include <deque>
 #include "Location.hpp"
 #include "Config.hpp"

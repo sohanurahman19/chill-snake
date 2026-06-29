@@ -1,5 +1,4 @@
-#pragma once
-#include <game.hpp>
+#include "game.hpp"
 
 game::game() : painter(nullptr), window(nullptr) { };
 game::~game(){
@@ -13,7 +12,7 @@ game::~game(){
 }
 
 bool game::init(){
-     if(SDL_Init(SDL_INIT_VIDEO) != 0) return false;
+     if(SDL_Init(SDL_INIT_VIDEO) == false) return false;
      window = SDL_CreateWindow("Chill Game", config::screen_width, config::screen_height, 0);
      if(window == nullptr) return false;
      painter = SDL_CreateRenderer(window, nullptr);
