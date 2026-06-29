@@ -3,7 +3,7 @@
 snake::snake(){
      direction_vector = {config::grid_size, 0};
      int middle_row_pixel = (config::total_row / 2) * config::grid_size;
-     for(int i = 10; i >= 0; i--){
+     for(int i = initial_size; i >= 0; i--){
           body.push_back({i * config::grid_size, middle_row_pixel});
      }
 }

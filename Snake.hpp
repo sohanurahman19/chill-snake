@@ -8,6 +8,7 @@ private:
      std::deque<pos> body;
      pos direction_vector;
      int grow_pending = 0;
+     int initial_size = 19;
 public:
      snake();
      void move();
