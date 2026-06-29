@@ -4,7 +4,7 @@
 #include "Food.hpp"
 #include "Config.hpp"
 
-food::food(snake &python){
+food::food(const snake &python){
      re_spawn(python);
 }
 
