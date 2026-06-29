@@ -20,3 +20,27 @@ bool game::init(){
      if(painter == nullptr) return false;
      return true;
 }
+
+void game::run(){
+     bool is_running = true;
+     SDL_Event event;
+     while(is_running){
+          while(SDL_PollEvent(&event)){
+               handle_input(event);
+          }
+          update();
+          paint();
+          SDL_Delay(delay);
+     }
+}
+
+void game::handle_input(SDL_Event &event){
+     if(event.type == SDL_EVENT_KEY_DOWN){
+          switch(event.key.key){
+               case SDLK_UP : python.set_direction({0, -config::grid_size}); break;
+               case SDLK_DOWN : python.set_direction({0, config::grid_size}); break;
+               case SDLK_RIGHT : python.set_direction({config::grid_size, 0}); break;
+               case SDLK_LEFT : python.set_direction({-config::grid_size, 0}); break;
+          }
+     }
+}
