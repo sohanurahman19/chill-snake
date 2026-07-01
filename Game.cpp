@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include <string>
 
 game::game() : painter(nullptr), window(nullptr) { };
 game::~game(){
@@ -85,6 +86,11 @@ void game::paint(){
           SDL_FRect part_rect = {(float)part.x, (float)part.y, grid_si, grid_si};
           SDL_RenderFillRect(painter, &part_rect);
      }
+
+     int score = python.get_body().size() - 2;
+     std::string score_str = "Score: " + std::to_string(score);
+     SDL_SetRenderDrawColor(painter, 255, 255, 255, 255);
+     SDL_RenderDebugText(painter, 20.0f, 20.0f, score_str.c_str());
 
      // swapping the front and the back buffer
      SDL_RenderPresent(painter);
